@@ -31,13 +31,14 @@ python main.py
 
 ## Assignment
 
-You are given the code for a simplified autonomous car and human driver.
-We want to develop an algorithm that plans the robot's actions using game theory.
-Specifically, we will implement Stackelberg Games to reach tractable solutions.
+You are given the code for two agents (say a human and a robot) playing hide and seek.
+The agents are constrained to move around a circle.
+The human (in blue) is hiding, and the robot (in red) is seeking.
+Formally, the human tries to maximize their distance from the robot, and the robot seeks to minimize their distance from the robot.
+Both agents will co-adapt as they come up with better ways to play this game.
 Complete the following steps:
 
-1. Explain the vehicle dynamics. What are actions, and how do these actions cause the vehicles to move?
-2. Explain the current cost functions. What is the human optimizing for? What is the robot optimizing for?
-3. Run the code and find the optimal human trajectory. How does this trajectory change if the robot changes its initial state or motion?
-4. Implement a Stackelberg Game where the robot plays first. Compare your solutions when the robot is trying to help the human (current reward) and when the robot is trying to delay the human (altered reward).
-5. Reverse the Stackelberg Game so that the human plays first. How are these solutions different from the solutions for the previous question?
+1. Describe how an agent modifies their actions. What changes in the code will cause the agent to make "larger" or "smaller" changes?
+2. What happens if the two agents take turns improving their strategies? Does the behavior converge? What happens if they have different "rates" for updating their actions? Modify the code to explore these questions.
+3. What happens if they both adapt at the same time? As before, consider whether the team converges to a joint strategy, and how the interaction changes if they update at different rates. Modify the code to implement this simultaneous co-adaptation.
+4. Imagine that the robot knows how the human will adapt. Progam the robot so that it is aware of the human's learning rule. How can the robot leverage this information?
